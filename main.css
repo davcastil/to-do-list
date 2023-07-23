@@ -1,0 +1,152 @@
+/******************************************************/
+/***************** Site styles ************************/
+/******************************************************/
+* {
+    margin: 0;  /* No margin and padding that is by default in the page */
+    padding:0;
+    box-sizing: border-box;  /* It trims where the border is, instead of going past */
+
+    font-family: sans-serif;
+}
+
+/* Removes default styling on all buttons */
+button {
+    appearance:none;
+    background-color: transparent;
+    outline:none;
+    border:none;
+
+    cursor:pointer;
+}
+/******************************************************/
+/***************** Body styles ************************/
+/******************************************************/
+body {
+    background-color:#FCFCFC;
+    color:#FCFCFC;
+}
+
+main {
+    min-height: 100vh;  /* whole percentage of the page from top to bottom */
+    display:flex;
+    justify-content:center;
+    padding: 2rem 1.5rem;
+}
+
+/******************************************************/
+/***************** Container styles *******************/
+/******************************************************/
+.app {
+    width:100%;
+    max-width:768px;
+    background-color:teal;
+    border-radius: 1.5rem;
+    padding:3.5rem;
+}
+
+
+/***************** Header styles *******************/
+.app header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding:1rem;
+    border-bottom: 5px solid #FCFCFC;
+}
+
+.app header h1 {
+    color:#FCFCFC;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.app header button {
+    color:#FCFCFC;
+    background-color: teal;
+    font-size: 18px;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 1.5rem;
+    padding:1rem;
+    text-transform: uppercase;
+}
+
+.app header button:hover {
+    padding:1.1rem;
+    color: teal;
+    background-color: #FCFCFC;
+}
+
+/***************** Task styles *******************/
+.item {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding:1.5rem;
+    border-radius: 1rem;
+    background-color:  rgb(35, 112, 112);
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    margin-bottom: 1.5rem;
+}
+
+.item:last-of-type {
+    margin-bottom: 0;  /* This ensures that the last item is not pushing down if it is the last already  */
+}
+
+.item input[type="checkbox"] {
+    margin-right: 1rem;  /*This is to ensure that when button and text are together there is some margin  */
+}
+
+.item input[type="text"] {
+    appearance:none;
+    background-color: transparent;
+    outline:none;
+    border:none;
+    font-weight: 400;
+    color:#FCFCFC;
+    font-size: 20px;  
+    flex: 1 1 0%;  /* this sends the content to the left and stretch out the gap */
+    margin-right: 1rem;
+}
+
+/* This ensures that when text field is enabled (to edit) it shows a border line on bottom */
+.item input[type="text"]:not(:disabled) {
+    border-bottom: 2px solid #FCFCFC;  
+}
+
+.item.complete {
+    opacity: 0.7;
+}
+
+.item.complete input[type="text"] {
+    text-decoration: line-through;
+}
+
+.item:hover, .item:focus-within {
+    outline: 2px solid #FCFCFC;
+}
+
+
+/***************** Action buttons styles *******************/
+.actions button {
+    color: #FCFCFC;
+    margin-right: 1rem;
+    opacity: 0.7;
+    transform: 0.1s;
+}
+
+/* Remove button color */
+.actions button.remove-btn {
+    color:crimson;
+}
+
+/*When hovering changes opacity in buttons */
+.actions button:hover {
+    opacity: 1;
+}
+
+
+/* This moves the buttons back to the right hand side at a margin of 0 */
+.actions button:last-of-type {
+    margin-right: 0;
+}
