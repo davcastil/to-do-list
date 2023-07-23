@@ -114,6 +114,15 @@ function CreateTodoElement(item) {
         item.text = input_el.value;
     });
 
+    // When enter is pressed, item is saved and focus lost
+    input_el.addEventListener("keyup", (Event) => {
+        if (Event.key === "Enter") {
+            input_el.blur();
+            input_el.setAttribute("disabled", "");
+            Save();
+        }
+    })
+
     // If "input_el" loses focus (click outside), attribute would be "disabled" and save to localstorage the update.
     input_el.addEventListener("blur", () => {
         input_el.setAttribute("disabled", "");
